@@ -1,12 +1,33 @@
-# React + Vite
+# Adele Finney's Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is my personal portfolio website built with React and Tailwind CSS.  
+It showcases my projects, skills, experience, and provides a way to contact me.
 
-Currently, two official plugins are available:
+# Access my website!
+This portfolio is hosted on github pages and can be found with the following link:
+https://delly0.github.io/af-portfolio/ 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- Responsive design with light and dark modes
+- Animated sky background with stars, birds, clouds, and weather effects
+- Interactive sidebar navigation highlighting active sections
+- Custom glowing cursor effect
+- Project showcase with detailed descriptions
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tech Stack
+
+- React (with TypeScript)
+- Tailwind CSS
+- React Router
+- React Icons
+
+
+### Installation
+Prerequisites - Node.js and npm installed
+
+```bash
+git clone https://github.com/yourusername/af-portfolio.git
+cd af-portfolio
+npm install
+npm run dev
