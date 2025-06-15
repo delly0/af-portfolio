@@ -148,7 +148,7 @@ const Projects = ({ isDay }: ProjectsProps) => {
       ],
       extras: {
         github: "https://github.com/delly0/ux-redesign-study",
-        video: `${import.meta.env.BASE_URL}UX-presentation.mov`
+        video: `${import.meta.env.BASE_URL}UX-presentation.mp4`
       }
     }
   ];
