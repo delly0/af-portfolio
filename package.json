@@ -8,7 +8,7 @@
     "dev": "vite",
     "build": "vite build",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
+    "deploy": "gh-pages -d dist -r https://github.com/delly0/af-portfolio.git",
     "lint": "eslint .",
     "preview": "vite preview"
   },
