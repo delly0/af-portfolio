@@ -33,7 +33,8 @@ const SkyBackground: React.FC<SkyBackgroundProps> = ({ isDay }) => {
             return (
               <img
                 key={`bird-${i}`}
-                src="/bird.gif"
+                // src="/bird.gif"
+                src={`${import.meta.env.BASE_URL}bird.gif`}
                 alt="bird"
                 className={`absolute pointer-events-none`}
                 style={{
@@ -52,7 +53,8 @@ const SkyBackground: React.FC<SkyBackgroundProps> = ({ isDay }) => {
         : [...Array(NUM_STARS)].map((_, i) => (
             <img
               key={`star-${i}`}
-              src="/star.png"
+              // src="/star.png"
+              src={`${import.meta.env.BASE_URL}star.png`}
               alt="star"
               className="absolute w-1.5 h-1.5 pointer-events-none"
               style={{
@@ -66,7 +68,7 @@ const SkyBackground: React.FC<SkyBackgroundProps> = ({ isDay }) => {
 
       {/* Sun or Moon */}
       <img
-        src={isDay ? "/sun.png" : "/moon.png"}
+        src={isDay ? `${import.meta.env.BASE_URL}sun.png` : `${import.meta.env.BASE_URL}moon.png`}
         alt={isDay ? "sun" : "moon"}
         className="absolute w-16 h-16 animate-pulse pointer-events-none"
         style={{
@@ -92,7 +94,8 @@ const SkyBackground: React.FC<SkyBackgroundProps> = ({ isDay }) => {
         >
           <div className="relative w-32 h-40 overflow-visible">
             <img
-              src="/cloud.png"
+              // src="/cloud.png"
+              src={`${import.meta.env.BASE_URL}cloud.png`}
               alt="cloud"
               className="w-full opacity-90 pointer-events-none"
             />

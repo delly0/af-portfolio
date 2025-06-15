@@ -25,7 +25,7 @@ const Projects = ({ isDay }: ProjectsProps) => {
         "Custom style guide following QUT branding"
       ],
       extras: {
-        video: "/walkthrough.mp4",
+        video: `${import.meta.env.BASE_URL}walkthrough.mp4`,
         figma: "https://www.figma.com/proto/fhiIFW8exuAeS2sUycMCrF/prototype-v2.0?content-scaling=fixed&kind=proto&node-id=70-1067&scaling=scale-down&starting-point-node-id=70%3A1067&t=LJXTnMAGeL2DitKF-1",
         styleGuide: "https://drive.google.com/file/d/17GY1ef4v0pwrDHjADfavFv3qcTnqNlDb/view?usp=sharing",
         installationGuide: {
@@ -35,7 +35,7 @@ const Projects = ({ isDay }: ProjectsProps) => {
             "Locate and open the .apk file to install",
             "Allow installs from unknown sources if prompted"
           ],
-          qrCode: "/QR.png",
+          qrCode: `${import.meta.env.BASE_URL}QR.png`,
           alternateLink: "https://expo.dev/accounts/jaredpower/projects/qutsus/builds/000ca492-8898-4e74-937c-fafbde3c6140"
         }
       }
@@ -54,11 +54,11 @@ const Projects = ({ isDay }: ProjectsProps) => {
       extras: {
         github: "https://github.com/delly0/elevator-sim-c",
         images: [
-          { src: "/elevator1.svg", caption: "Component connectivity" },
-          { src: "/elevator2.gif", caption: "Scheduling system example" },
-          { src: "/elevator3.svg", caption: "Visual demonstration of scheduler" }
+          { src: `${import.meta.env.BASE_URL}elevator1.svg`, caption: "Component connectivity" },
+          { src: `${import.meta.env.BASE_URL}elevator2.gif`, caption: "Scheduling system example" },
+          { src: `${import.meta.env.BASE_URL}elevator3.svg`, caption: "Visual demonstration of scheduler" }
         ],
-        pdf: "/elevator-description.pdf"
+        pdf: `${import.meta.env.BASE_URL}elevator-description.pdf`
       }
     },
     {
@@ -90,12 +90,12 @@ const Projects = ({ isDay }: ProjectsProps) => {
       extras: {
         github: "https://github.com/delly0/movie-analytics-frontend",
         images: [
-          { src: "/movie1.png", caption: "Landing page" },
-          { src: "/movie2.png", caption: "Movie search page" },
-          { src: "/movie3.png", caption: "Movie information page" },
-          { src: "/movie4.png", caption: "Person information page" },
-          { src: "/movie5.png", caption: "Login page for accessing authentication person information page" },
-          { src: "/movie6.png", caption: "Message for unauthenticated users attempting to access the person information page" }
+          { src: `${import.meta.env.BASE_URL}movie1.png`, caption: "Landing page" },
+          { src: `${import.meta.env.BASE_URL}movie2.png`, caption: "Movie search page" },
+          { src: `${import.meta.env.BASE_URL}movie3.png`, caption: "Movie information page" },
+          { src: `${import.meta.env.BASE_URL}movie4.png`, caption: "Person information page" },
+          { src: `${import.meta.env.BASE_URL}movie5.png`, caption: "Login page for accessing authentication person information page" },
+          { src: `${import.meta.env.BASE_URL}movie6.png`, caption: "Message for unauthenticated users attempting to access the person information page" }
         ]
       }
     },
@@ -112,7 +112,7 @@ const Projects = ({ isDay }: ProjectsProps) => {
       ],
       extras: {
         github: "https://github.com/delly0/movie-api-server",
-        reportLink: "/test-report.html"
+        reportLink: `${import.meta.env.BASE_URL}test-report.html`
       }
     },
     {
@@ -129,9 +129,9 @@ const Projects = ({ isDay }: ProjectsProps) => {
       extras: {
         github: "https://github.com/delly0/ev-insight-jupyter",
         images: [
-          { src: "/EV1.png" },
-          { src: "/EV2.png" },
-          { src: "/EV3.png" }
+          { src: `${import.meta.env.BASE_URL}EV1.png` },
+          { src: `${import.meta.env.BASE_URL}EV2.png` },
+          { src: `${import.meta.env.BASE_URL}EV3.png` }
         ]
       }
     },
@@ -148,7 +148,7 @@ const Projects = ({ isDay }: ProjectsProps) => {
       ],
       extras: {
         github: "https://github.com/delly0/ux-redesign-study",
-        video: "/UX-presentation.mov"
+        video: `${import.meta.env.BASE_URL}UX-presentation.mov`
       }
     }
   ];

@@ -114,7 +114,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isDay }) => {
           <FaGithub />
         </a>
         <a
-          href="/resume.pdf"
+          href={`${import.meta.env.BASE_URL}resume.pdf`}
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-blue-500"
