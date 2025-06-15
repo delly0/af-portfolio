@@ -73,7 +73,7 @@ const Projects = ({ isDay }: ProjectsProps) => {
         "Modular structure with scalability in mind"
       ],
       extras: {
-        github: "https://github.com/delly0/adele-finney-portfolio"
+        github: "https://github.com/delly0/af-portfolio"
       }
     },
     {
