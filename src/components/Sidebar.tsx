@@ -15,9 +15,14 @@ const Sidebar: React.FC<SidebarProps> = ({ isDay }) => {
   const location = useLocation();
   const isContactPage = location.pathname === "/contact";
 
+  // Track which section is active (for highlighting)
   const [activeSection, setActiveSection] = useState("");
 
+  // Track if screen is md or larger (>=768px)
+  const [isMdUp, setIsMdUp] = useState(window.innerWidth >= 768);
+
   useEffect(() => {
+    // Update active section based on scroll position
     const handleScroll = () => {
       const sections = document.querySelectorAll("section");
       let current = "";
@@ -30,10 +35,22 @@ const Sidebar: React.FC<SidebarProps> = ({ isDay }) => {
       setActiveSection(current);
     };
 
+    // Update screen width state on resize
+    const handleResize = () => {
+      setIsMdUp(window.innerWidth >= 768);
+    };
+
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
+  // Hide sidebar if screen too small or on contact page
+  if (!isMdUp) return null;
   if (isContactPage) return null;
 
   const links: NavLink[] = [
@@ -61,19 +78,21 @@ const Sidebar: React.FC<SidebarProps> = ({ isDay }) => {
 
   return (
     <div
-  className={`
-    hidden md:flex fixed left-0 top-0 h-full w-72 flex-col justify-between
-    pt-20 px-6 text-sm z-40 transition-colors duration-500
-    ${isDay ? "text-gray-700" : "text-gray-300"}
-  `}
-  style={{ background: "transparent" }}
->
-
-
+      className={`
+        fixed left-0 top-0 h-full w-72 flex flex-col justify-between
+        pt-20 px-6 text-sm z-40 transition-colors duration-500
+        ${isDay ? "text-gray-700" : "text-gray-300"}
+      `}
+      style={{ background: "transparent" }}
+    >
       <div>
         <h1 className="text-2xl font-bold mb-2">{title}</h1>
         {!isProjectsPage && (
-          <p className={`text-xs mb-8 pr-2 leading-snug ${isDay ? "text-gray-600" : "text-gray-400"}`}>
+          <p
+            className={`text-xs mb-8 pr-2 leading-snug ${
+              isDay ? "text-gray-600" : "text-gray-400"
+            }`}
+          >
             {subtitle}
           </p>
         )}
@@ -97,12 +116,15 @@ const Sidebar: React.FC<SidebarProps> = ({ isDay }) => {
               <FaCloud className="text-current" />
               {label}
             </button>
-
           ))}
         </nav>
       </div>
 
-      <div className={`flex gap-4 mt-10 mb-10 text-xl ${isDay ? "text-gray-700" : "text-gray-100"}`}>
+      <div
+        className={`flex gap-4 mt-10 mb-10 text-xl ${
+          isDay ? "text-gray-700" : "text-gray-100"
+        }`}
+      >
         <a
           href="https://www.linkedin.com/in/adele-finney-25a460332/"
           target="_blank"
