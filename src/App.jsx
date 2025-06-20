@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-// import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 import { HashRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
 import Navbar from "./components/Navbar";
@@ -10,7 +9,6 @@ import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 
-
 const Layout = ({ children, isDay, setIsDay }) => {
   const location = useLocation();
   const showSidebar = location.pathname !== "/contact";
@@ -20,9 +18,8 @@ const Layout = ({ children, isDay, setIsDay }) => {
       <SkyBackground isDay={isDay} />
       <GlowCursor isDay={isDay} />
       {showSidebar && <Sidebar isDay={isDay} />}
-      <Navbar isDay={isDay} toggleDay={() => setIsDay(!isDay)} />
+      <Navbar isDay={isDay} toggleDay={() => setIsDay((prev) => !prev)} />
 
-      {/* Wrapper div controls general text color */}
       <div
         className={`ml-32 pt-16 transition-colors duration-700 ${
           isDay ? "text-gray-900" : "text-gray-100"
@@ -35,7 +32,15 @@ const Layout = ({ children, isDay, setIsDay }) => {
 };
 
 const App = () => {
-  const [isDay, setIsDay] = useState(true);
+  const [isDay, setIsDay] = useState(() => {
+    const stored = localStorage.getItem("isDay");
+    return stored !== null ? JSON.parse(stored) : true;
+  });
+
+  // Whenever isDay changes, save to localStorage
+  useEffect(() => {
+    localStorage.setItem("isDay", JSON.stringify(isDay));
+  }, [isDay]);
 
   return (
     <Router>

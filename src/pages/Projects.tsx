@@ -1,4 +1,3 @@
-
 import React from "react";
 
 type ProjectsProps = {
@@ -10,6 +9,10 @@ const Projects = ({ isDay }: ProjectsProps) => {
   const secondaryText = isDay ? "text-gray-700" : "text-gray-300";
   const tertiaryText = isDay ? "text-gray-600" : "text-gray-400";
   const linkColor = "text-blue-500";
+
+  const sectionPanelClass = isDay
+    ? "bg-white/20 backdrop-blur-md text-gray-800"
+    : "bg-black/20 backdrop-blur-md text-gray-200";
 
   const projectList = [
     {
@@ -155,24 +158,28 @@ const Projects = ({ isDay }: ProjectsProps) => {
 
   return (
     <div className="min-h-screen pl-4 pr-4 pt-20 pb-20 space-y-16 md:pl-[140px] md:pr-10">
-    <h2 className={`text-4xl font-bold mb-10 ${textColor}`}>Projects 🚀</h2>
-      {projectList.map(({ id, title, summary, technical, features, extras }) => (
-        <section key={id} id={id} className="space-y-6">
-          <h3 className={`text-2xl font-semibold ${textColor}`}>{title}</h3>
-          <p className={`max-w-xl ${secondaryText}`}>{summary}</p>
-          <p className={`text-sm italic ${tertiaryText}`}>
-            Frameworks & Tools: {technical}
-          </p>
-          {id === "project1" && (
-            <p className={`text-sm italic ${tertiaryText}`}>
-              The source code for this project has been handed over to QUT Facilities Management and is now confidential. As such, I cannot share the original codebase.
-            </p>
-          )}
-          <ul className={`list-disc list-inside mt-2 ${textColor}`}>
-            {features.map((feature, index) => (
-              <li key={index}>{feature}</li>
-            ))}
-          </ul>
+          <h2 className={`text-4xl font-bold mb-10 ${textColor}`}>Projects 🚀</h2>
+          {projectList.map(({ id, title, summary, technical, features, extras }) => (
+            <section
+              key={id}
+              id={id}
+              className={`${sectionPanelClass} max-w-4xl mx-auto p-8 rounded-lg mb-16 space-y-6`}
+            >
+              <h3 className={`text-2xl font-semibold ${textColor}`}>{title}</h3>
+              <p className={`max-w-xl ${secondaryText}`}>{summary}</p>
+              <p className={`text-sm italic ${tertiaryText}`}>
+                Frameworks & Tools: {technical}
+              </p>
+              {id === "project1" && (
+                <p className={`text-sm italic ${tertiaryText}`}>
+                  The source code for this project has been handed over to QUT Facilities Management and is now confidential. As such, I cannot share the original codebase.
+                </p>
+              )}
+              <ul className={`list-disc list-inside mt-2 ${textColor}`}>
+                {features.map((feature, index) => (
+                  <li key={index}>{feature}</li>
+                ))}
+              </ul>
 
           {extras && (
             <div className="mt-6 space-y-4">

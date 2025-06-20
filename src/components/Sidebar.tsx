@@ -88,15 +88,16 @@ const Sidebar: React.FC<SidebarProps> = ({ isDay }) => {
       <div>
         <h1 className="text-2xl font-bold mb-2">{title}</h1>
         {!isProjectsPage && (
-          <p
-            className={`text-xs mb-8 pr-2 leading-snug ${
-              isDay ? "text-gray-600" : "text-gray-400"
-            }`}
-          >
-            {subtitle}
-          </p>
+          <p className="text-xs mb-8 pr-2 leading-snug">{subtitle}</p>
         )}
-        <nav className="space-y-4">
+
+        {/* Blue/gray translucent blurred background ONLY behind nav links */}
+        <nav
+          className={`
+            space-y-4 p-4 rounded-md backdrop-blur-md
+            ${isDay ? "bg-white/20 backdrop-blur-md text-gray-900" : "bg-black/20 backdrop-blur-md text-gray-100"}
+          `}
+        >
           {navLinks.map(({ section, label }) => (
             <button
               key={section}

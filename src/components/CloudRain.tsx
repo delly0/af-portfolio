@@ -1,40 +1,47 @@
-import React, { useState } from "react";
+import React from "react";
 
 interface CloudRainProps {
-  onRainToggle?: (isRaining: boolean) => void;
+  isRaining: boolean;
+  lightning?: boolean;
+  pos: { top: string; left: string };
 }
 
-const CloudRain = ({ onRainToggle }: CloudRainProps) => {
-  const [isRaining, setIsRaining] = useState(false);
-  console.log(isRaining) 
-
-  const handleClick = () => {
-    const newState = !isRaining;
-    setIsRaining(newState);
-    onRainToggle?.(newState); // optional chaining prevents crash
-  };
-
-  const handleMouseEnter = () => {
-    if (!isRaining) onRainToggle?.(true);
-  };
-
-  const handleMouseLeave = () => {
-    if (!isRaining) onRainToggle?.(false);
-  };
-
+const CloudRain: React.FC<CloudRainProps> = ({ isRaining, lightning, pos }) => {
   return (
     <div
-      className="fixed bottom-6 left-1/2 transform -translate-x-1/2 cursor-pointer w-16 h-16 z-20"
-      onClick={handleClick}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      title="Click to toggle raining!"
+      className="absolute overflow-visible"
+      style={{
+        top: pos.top,
+        left: pos.left,
+        animation: `floatCloud 20s ease-in-out infinite alternate`,
+      }}
     >
-      <img
-        src="/cloud.png"
-        alt="toggle rain cloud"
-        className="w-full h-full transition-transform duration-300 hover:scale-110"
-      />
+      <div className="relative w-32 h-40 overflow-visible">
+        <img
+          src={`${import.meta.env.BASE_URL}cloud.png`}
+          alt="cloud"
+          className="w-full opacity-90 pointer-events-none"
+        />
+        {isRaining &&
+          [...Array(6)].map((_, j) => (
+            <div
+              key={`raindrop-${j}`}
+              className="absolute bg-blue-400"
+              style={{
+                left: `${10 + j * 12}%`,
+                top: "90%",
+                width: "2px",
+                height: "16px",
+                borderRadius: "2px",
+                animation: `raindrop 0.8s ease-in-out infinite`,
+                animationDelay: `${j * 0.2}s`,
+              }}
+            />
+          ))}
+        {lightning && Math.random() < 0.05 && (
+          <div className="absolute inset-0 bg-white bg-opacity-50 animate-flash" />
+        )}
+      </div>
     </div>
   );
 };

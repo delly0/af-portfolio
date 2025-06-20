@@ -8,6 +8,10 @@ body {
   @apply bg-white dark:bg-[#0f172a] text-gray-900 dark:text-gray-100 transition-colors duration-500;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @keyframes twinkle {
   0%, 100% { opacity: 0.8; }
   50% { opacity: 0.2; }
@@ -16,17 +20,6 @@ body {
 @keyframes floatCloud {
   0% { transform: translateX(0px); }
   100% { transform: translateX(30px); }
-}
-
-@keyframes raindrop {
-  0% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(80px);
-    opacity: 0;
-  }
 }
 
 
@@ -47,3 +40,86 @@ body {
     transform: translateX(-110vw) scaleX(-1);
   }
 }
+
+
+@keyframes raindrop {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(20px); opacity: 0; }
+}
+
+@keyframes fade-in-out {
+  0% { opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.animate-fade-in-out {
+  animation: fade-in-out 10s ease-in-out forwards;
+}
+
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 3s ease-in-out infinite;
+}
+
+@keyframes lightning-flash {
+  0% { opacity: 0.6; }
+  100% { opacity: 0; }
+}
+
+.animate-lightning-flash {
+  animation: lightning-flash 0.2s ease-in-out;
+}
+
+@keyframes fade-cloud {
+  0% { opacity: 0; transform: translateY(-10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-cloud {
+  animation: fade-cloud 1.2s ease-out forwards;
+}
+
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-30%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fade-slide-in {
+  animation: fadeSlideIn 3s ease forwards;
+}
+
+@keyframes rainbow-fade-reveal {
+  0% {
+    opacity: 0;
+    clip-path: inset(0 100% 0 0);
+  }
+  50% {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+  }
+  100% {
+    opacity: 0;
+    clip-path: inset(0 100% 0 0);
+  }
+}
+
+.rainbow-fade-reveal {
+  animation: rainbow-fade-reveal 10s ease-in-out forwards;
+}
+
