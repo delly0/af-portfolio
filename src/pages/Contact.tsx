@@ -10,9 +10,8 @@ interface ContactProps {
 const Contact: React.FC<ContactProps> = ({ isDay }) => {
   return (
     <div
-      className={`relative z-10 min-h-screen flex flex-col justify-center items-start px-32 pt-20 space-y-6 transition-colors duration-700 ${
-        isDay ? "text-gray-900" : "text-gray-100"
-      }`}
+      className={`relative z-10 min-h-screen flex flex-col justify-center items-start px-4 pt-20 space-y-6 transition-colors duration-700
+        md:px-32 ${isDay ? "text-gray-900" : "text-gray-100"}`}
     >
       <h2 className="text-4xl font-bold">Let's Get In Touch</h2>
       <p>

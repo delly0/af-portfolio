@@ -61,13 +61,14 @@ const Sidebar: React.FC<SidebarProps> = ({ isDay }) => {
 
   return (
     <div
-      className={`
-        fixed left-0 top-0 h-full w-80 flex flex-col justify-between
-        pt-20 px-6 text-sm z-40 transition-colors duration-500
-        ${isDay ? "text-gray-700" : "text-gray-300"}
-      `}
-      style={{ background: "transparent" }}
-    >
+  className={`
+    hidden md:flex fixed left-0 top-0 h-full w-72 flex-col justify-between
+    pt-20 px-6 text-sm z-40 transition-colors duration-500
+    ${isDay ? "text-gray-700" : "text-gray-300"}
+  `}
+  style={{ background: "transparent" }}
+>
+
 
       <div>
         <h1 className="text-2xl font-bold mb-2">{title}</h1>
@@ -78,20 +79,25 @@ const Sidebar: React.FC<SidebarProps> = ({ isDay }) => {
         )}
         <nav className="space-y-4">
           {navLinks.map(({ section, label }) => (
-            <a
+            <button
               key={section}
-              href={`#${section}`}
+              onClick={() => {
+                const target = document.getElementById(section);
+                if (target) {
+                  target.scrollIntoView({ behavior: "smooth", block: "start" });
+                }
+              }}
               data-section={section}
-              className={`sidebar-link flex items-center gap-2 transition-all duration-300 ${
+              className={`sidebar-link w-full text-left flex items-center gap-2 transition-all duration-300 ${
                 activeSection === section
                   ? "text-blue-500 font-semibold opacity-100"
                   : "opacity-50 hover:opacity-100"
               }`}
             >
-              {/* Icon inherits current text color for dark/light mode */}
               <FaCloud className="text-current" />
               {label}
-            </a>
+            </button>
+
           ))}
         </nav>
       </div>

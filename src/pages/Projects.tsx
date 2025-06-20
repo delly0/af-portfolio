@@ -154,8 +154,8 @@ const Projects = ({ isDay }: ProjectsProps) => {
   ];
 
   return (
-    <div className="min-h-screen pl-[140px] pr-10 pt-20 pb-20 space-y-16">
-      <h2 className={`text-4xl font-bold mb-10 ${textColor}`}>Projects 🚀</h2>
+    <div className="min-h-screen pl-4 pr-4 pt-20 pb-20 space-y-16 md:pl-[140px] md:pr-10">
+    <h2 className={`text-4xl font-bold mb-10 ${textColor}`}>Projects 🚀</h2>
       {projectList.map(({ id, title, summary, technical, features, extras }) => (
         <section key={id} id={id} className="space-y-6">
           <h3 className={`text-2xl font-semibold ${textColor}`}>{title}</h3>

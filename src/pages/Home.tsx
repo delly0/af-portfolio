@@ -13,7 +13,7 @@ const funFacts = [
   "Building apps with ❤️",
   "Reading enthusiast 📖",
   "Music junkie 🎧",
-  "Budding cat lady 🐈‍⬛",
+  "Always up for debugging - with my cat as moral support 🐈‍⬛",
 ];
 
 const Home: React.FC<HomeProps> = ({ isDay }) => {
@@ -57,7 +57,7 @@ const Home: React.FC<HomeProps> = ({ isDay }) => {
 
   return (
     <div
-      className={`min-h-screen px-40 pt-24 pb-32 space-y-48 scroll-smooth transition-colors duration-700 ${textColor}`}
+      className={`min-h-screen px-0 md:pl-40 pt-24 pb-32 space-y-48 scroll-smooth transition-colors duration-700 ${textColor}`}
     >
       {/* Summary Section */}
       <section id="summary" className="space-y-8 scroll-mt-20">
@@ -65,7 +65,7 @@ const Home: React.FC<HomeProps> = ({ isDay }) => {
           <FaUserGraduate className="text-current" /> Summary
         </h2>
         <p className={`max-w-2xl text-lg leading-relaxed ${secondaryText}`}>
-          Hi, I’m Adele — a fresh IT graduate from QUT with a strong interest in
+          Hi, I'm Adele — a fresh IT graduate from QUT with a strong interest in
           front-end development, creative coding, and user-centered design. I am
           passionate about building beautiful, usable interfaces and meaningful
           user experiences.
@@ -78,7 +78,7 @@ const Home: React.FC<HomeProps> = ({ isDay }) => {
           <FaLaptopCode className="text-current" /> Technical Skills
         </h2>
         <ul
-          className={`grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-4 text-md list-disc list-inside leading-relaxed max-w-4xl ${secondaryText}`}
+          className={`flex flex-wrap gap-y-3 md:gap-y-4 md:gap-x-12 text-md list-disc list-inside max-w-4xl ${secondaryText}`}
         >
           <li>Experience in Front-End development such as HTML, CSS, JavaScript, React, and Bootstrap</li>
           <li>Experience in prototyping tools such as Figma</li>
