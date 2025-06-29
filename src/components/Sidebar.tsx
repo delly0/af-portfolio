@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { FaCloud, FaLinkedin, FaGithub, FaFileDownload } from "react-icons/fa";
+import AnimatedTypingEffect from "../components/AnimatedTypingEffect";
 
 interface NavLink {
   section: string;
@@ -10,6 +11,15 @@ interface NavLink {
 interface SidebarProps {
   isDay: boolean;
 }
+
+const funFacts = [
+  "I enjoy water and snow skiing ⛷️",
+  "Sailed the Whitsundays in a bare boat ⛵️",
+  "Building apps with ❤️",
+  "Reading enthusiast 📖",
+  "Music junkie 🎧",
+  "Always up for debugging - with my cat as moral support 🐈‍⬛",
+];
 
 const Sidebar: React.FC<SidebarProps> = ({ isDay }) => {
   const location = useLocation();
@@ -67,6 +77,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isDay }) => {
     { section: "project5", label: "Movies API" },
     { section: "project6", label: "EV Data Analytics" },
     { section: "project7", label: "UX Redesign" },
+    { section: "project8", label: "Slowly MVP" },
   ];
 
   const isProjectsPage = location.pathname === "/projects";
@@ -120,6 +131,16 @@ const Sidebar: React.FC<SidebarProps> = ({ isDay }) => {
           ))}
         </nav>
       </div>
+
+            {/* Fun Facts */}
+            <div className="max-w-4xl mx-auto mt-24 text-center">
+              <AnimatedTypingEffect
+                texts={funFacts}
+                className={`text-sm italic text-center mb-6 transition-colors duration-500 ${
+                  isDay ? "text-gray-700" : "text-gray-300"
+                }`}
+              />
+            </div>
 
       <div
         className={`flex gap-4 mt-10 mb-10 text-xl ${

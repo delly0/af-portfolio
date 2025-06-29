@@ -153,6 +153,31 @@ const Projects = ({ isDay }: ProjectsProps) => {
         github: "https://github.com/delly0/ux-redesign-study",
         video: `${import.meta.env.BASE_URL}UX-presentation.mp4`
       }
+    },
+    {
+      id: "project8",
+      title: "Slowly MVP",
+      summary:
+        "A mood and emotional tracking app to help users slowly build emotional granularity and awareness through regular check-ins.",
+      technical: "React Native, Firebase, Context API, UI/UX Design",
+      features: [
+        "User creation flow with passcode authentication",
+        "Profile setup and customization",
+        "Emotion tracking interface with granular options",
+        "Data visualization of emotional trends",
+        "Custom kitchen for emotional regulation exercises"
+      ],
+      extras: {
+        github: "https://github.com/delly0/slowly",
+        videos: [
+          { id: "slow-create", label: "User Creation", src: `${import.meta.env.BASE_URL}slow-create.mp4` },
+          { id: "slow-passcode", label: "Passcode Authentication", src: `${import.meta.env.BASE_URL}slow-passcode.mp4` },
+          { id: "slow-profile", label: "Profile Setup", src: `${import.meta.env.BASE_URL}slow-profile.mp4` },
+          { id: "slow-kitchen", label: "Emotional Regulation Kitchen", src: `${import.meta.env.BASE_URL}slow-kitchen.mp4` },
+          { id: "slow-tracker", label: "Emotion Tracker", src: `${import.meta.env.BASE_URL}slow-tracker.mp4` },
+          { id: "slow-trends", label: "Emotional Trends Visualization", src: `${import.meta.env.BASE_URL}slow-trends.mp4` }
+        ]
+      }
     }
   ];
 
@@ -298,6 +323,22 @@ const Projects = ({ isDay }: ProjectsProps) => {
                   ))}
                 </div>
               )}
+                {extras.videos && (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6 place-items-center">
+                    {extras.videos.map(({ id, label, src }) => (
+                      <div key={id} className="text-center space-y-2">
+                        <p className={`font-semibold ${textColor}`}>{label}</p>
+                        <video
+                          src={src}
+                          controls
+                          className="w-[250px] h-auto rounded-lg shadow"
+                        >
+                          Your browser does not support the video tag.
+                        </video>
+                      </div>
+                    ))}
+                  </div>
+                )}
             </div>
           )}
         </section>

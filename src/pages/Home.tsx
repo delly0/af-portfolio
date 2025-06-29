@@ -1,20 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import { FaHtml5, FaReact, FaNode, FaPython, FaGitAlt, FaDatabase, FaFigma,
   FaChartBar, FaUserGraduate, FaCode, FaLaptopCode, FaDocker, FaCloud, FaShieldAlt, FaJava, FaProjectDiagram, FaDraftingCompass } from "react-icons/fa";
-import AnimatedTypingEffect from "../components/AnimatedTypingEffect";
-
 interface HomeProps {
   isDay: boolean;
 }
-
-const funFacts = [
-  "I enjoy water and snow skiing ⛷️",
-  "Sailed the Whitsundays in a bare boat ⛵️",
-  "Building apps with ❤️",
-  "Reading enthusiast 📖",
-  "Music junkie 🎧",
-  "Always up for debugging - with my cat as moral support 🐈‍⬛",
-];
 
 const skillsWithIcons = [
   { name: "HTML/CSS", icon: <FaHtml5 />, percent: 90 },
@@ -204,14 +193,6 @@ const Home: React.FC<HomeProps> = ({ isDay }) => {
           organisation, and teamwork.
         </p>
       </section>
-
-      {/* Fun Facts */}
-      <div className="max-w-4xl mx-auto mt-24 text-center">
-        <AnimatedTypingEffect
-          texts={funFacts}
-          className="text-2xl font-semibold"
-        />
-      </div>
     </div>
   );
 };

@@ -45,11 +45,11 @@ const AnimatedTypingEffect: React.FC<AnimatedTypingEffectProps> = ({
 
   return (
     <span
-      className={`font-mono text-lg text-blue-700 dark:text-blue-300 ${className}`}
-      aria-label="Animated typing effect"
+    className={`font-mono text-lg ${className}`}
+    aria-label="Animated typing effect"
     >
       {displayText}
-      <span className="inline-block w-1 h-6 bg-blue-700 dark:bg-blue-300 animate-blink ml-1" />
+      <span className="inline-block w-1 h-6 bg-current animate-blink ml-1" />
       <style>{`
         @keyframes blink {
           0%, 100% { opacity: 1; }
