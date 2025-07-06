@@ -178,7 +178,24 @@ const Projects = ({ isDay }: ProjectsProps) => {
           { id: "slow-trends", label: "Emotional Trends Visualization", src: `${import.meta.env.BASE_URL}slow-trends.mp4` }
         ]
       }
-    }
+    },
+    {
+      id: "project9",
+      title: "Garden Line App (MVP)",
+      summary:
+        "A React Native mobile chat app built with Firebase, supporting text, images, audio messages, Spotify embeds, and animated flower cards to foster emotional connection. This MVP includes real-time messaging with media previews and playback. Images coming soon :)",
+      technical: "React Native, Firebase Firestore, Expo Audio, React Native WebView, Lottie",
+      features: [
+        "Real-time chat with text, images, audio, and Spotify embeds",
+        "Animated flower cards with Lottie effects",
+        "Audio playback using Expo Audio API",
+        "Media previews on the messages screen",
+        "Smooth, user-friendly UI"
+      ],
+      extras: {
+        github: "https://github.com/delly0/garden-line",
+      },
+    },
   ];
 
   return (

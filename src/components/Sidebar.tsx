@@ -78,6 +78,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isDay }) => {
     { section: "project6", label: "EV Data Analytics" },
     { section: "project7", label: "UX Redesign" },
     { section: "project8", label: "Slowly MVP" },
+    { section: "project9", label: "Garden Line MVP" },
   ];
 
   const isProjectsPage = location.pathname === "/projects";
