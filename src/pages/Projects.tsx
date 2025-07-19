@@ -183,17 +183,26 @@ const Projects = ({ isDay }: ProjectsProps) => {
       id: "project9",
       title: "Garden Line App (MVP)",
       summary:
-        "A React Native mobile chat app built with Firebase, supporting text, images, audio messages, Spotify embeds, and animated flower cards to foster emotional connection. This MVP includes real-time messaging with media previews and playback. Images coming soon :)",
-      technical: "React Native, Firebase Firestore, Expo Audio, React Native WebView, Lottie",
+        "Garden Line is a mobile app designed around gentle, low-pressure communication. It was originally created as a heartfelt gift for a close friend, but evolved into a thoughtful, user-oriented app that supports connection even when words feel hard. Inspired by the emotional fatigue of constant messaging expectations, Garden Line offers a calming, garden-themed space where users can share presence and moments — not just messages. Users tend personal digital gardens and can visit their friends' gardens to plant animated flower messages tied to photos, audio, music, or small notes. It also supports passive shared presence, mood signaling via a lamp, and soft interaction — all designed with emotional bandwidth in mind.",
+      technical: "React Native, Firebase Firestore, Expo Audio, React Native WebView, Lottie, Animated API",
       features: [
-        "Real-time chat with text, images, audio, and Spotify embeds",
-        "Animated flower cards with Lottie effects",
-        "Audio playback using Expo Audio API",
-        "Media previews on the messages screen",
-        "Smooth, user-friendly UI"
+        "Digital gardens with real-time weather/sky visuals based on location",
+        "Send a flower: share a small moment as a flower (text, image, voice note, Spotify link)",
+        "Mood Lamp: change a color to gently communicate how you feel",
+        "Shared Presence Screen: appear together without needing to chat, with subtle haptics and 'hand holding' planned",
+        "Moment Cards: flower moments live in a timeline alongside regular messages",
+        "Soothing UI and ambient interaction design, inspired by mental load relief",
       ],
       extras: {
         github: "https://github.com/delly0/garden-line",
+        videos: [
+          { id: "garden-login", label: "Login & Sign Up", src: `${import.meta.env.BASE_URL}login.mp4` },
+          { id: "garden-garden", label: "My Garden", src: `${import.meta.env.BASE_URL}garden.mp4` },
+          { id: "garden-friend", label: "Friend's Garden", src: `${import.meta.env.BASE_URL}friendgarden.mp4` },
+          { id: "garden-messages", label: "Message Screen", src: `${import.meta.env.BASE_URL}messages.mp4` },
+          { id: "garden-presence", label: "Presence Mode", src: `${import.meta.env.BASE_URL}presence.mp4` },
+          { id: "garden-settings", label: "Settings", src: `${import.meta.env.BASE_URL}settings.mp4` }
+        ]
       },
     },
   ];
